@@ -20,6 +20,13 @@ void setup() {
 }
 
 void loop() {
+    if (!nunchuk.isConnected) {
+        Serial.println("No nunchuk connected");
+        nunchuk.init();
+        delay(100);
+        return;
+    }
+
     nunchuk.update();
 
     Serial.print(nunchuk.analogX, DEC);

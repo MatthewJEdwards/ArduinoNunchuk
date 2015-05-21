@@ -14,19 +14,20 @@
 
 class ArduinoNunchuk {
 public:
-    int analogX;
-    int analogY;
-    int accelX;
-    int accelY;
-    int accelZ;
-    int zButton;
-    int cButton;
+    uint8_t analogX;
+    uint8_t analogY;
+    uint16_t accelX;
+    uint16_t accelY;
+    uint16_t accelZ;
+    bool zButton;
+    bool cButton;
+    bool isConnected;
 
     void init();
     void update();
 
 private:
-    void _sendByte(byte data, byte location);
+    uint8_t _sendByte(uint8_t data, uint8_t location);
 };
 
 #endif
