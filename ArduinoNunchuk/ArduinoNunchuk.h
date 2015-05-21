@@ -17,9 +17,8 @@
 
 #include <Arduino.h>
 
-class ArduinoNunchuk
-{
-  public:
+class ArduinoNunchuk {
+public:
     int analogX;
     int analogY;
     int accelX;
@@ -31,7 +30,7 @@ class ArduinoNunchuk
     void init();
     void update();
 
-  private:
+private:
     void _sendByte(byte data, byte location);
 };
 
